@@ -1,4 +1,4 @@
-from flask import Flask, redirect, url_for, Unauthorized
+from flask import Flask, redirect, url_for
 from flask_discord import DiscordOAuth2Session, Unauthorized
 from flask import *
 
