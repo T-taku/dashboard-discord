@@ -1,5 +1,5 @@
-from flask import Flask, redirect, url_for
-from flask_discord import DiscordOAuth2Session
+from flask import Flask, redirect, url_for, Unauthorized
+from flask_discord import DiscordOAuth2Session, Unauthorized
 from flask import *
 
 
@@ -32,6 +32,11 @@ def callback():
     discord.callback()
     return redirect(url_for(".index"))
 
+@app.route("/server/")
+def server():
+    server = discord.fetch_guilds()
+    #...
+
 @app.route("/logout/")
 def logout():
     discord.revoke()
@@ -40,6 +45,10 @@ def logout():
 @app.errorhandler(404)
 def error_404(e):
     return render_template("404.html")
+
+@app.errorhandler(Unauthorized)
+def redirect_unauthorized(e):
+    return redirect(url_for(".login"))
 
 if __name__ == "__main__":
     app.run(debug=True)
