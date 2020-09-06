@@ -1,0 +1,126 @@
+
+body {
+  background-color: #fff;/*#202225;*/
+  font-family: "open sans", Helvetica, Arial, sans-serif;
+  color: #000000;
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  margin: 0;
+}
+
+.content{
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.select{
+  display: block;
+}
+
+.server > img {
+  border-radius: 50%;
+  box-shadow: 0 0 32px #fff;
+}
+
+
+.circle:hover {
+  background: #668ad8;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+input:checked + .slider {
+  background-color: #22f28a;
+}
+.switch.red input:checked + .slider {
+  background-color: #f04747;
+}
+input:focus + .slider {
+  box-shadow: 0 0 1px #22f28a;
+}
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+select {
+  color: #fff;
+  border: 1px solid #1a1a1a;
+  background: #2b2f33;
+  border-radius: 3px;
+  padding: 8px;
+  font-weight: 500;
+  outline: none;
+  transition: border 250ms ease-out;
+}
+
+.btn-animation-02 {
+  display: inline-block;
+  width: auto;
+  text-align: center;
+  background-color: #9ec34b;
+  border: 2px solid #9ec34b;
+  font-size: 16px;
+  color: #9ec34b;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 10px 24px;
+  border-radius: 4px;
+  position: relative;
+}
+
+.btn-animation-02 span {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-animation-02::before,
+.btn-animation-02::after {
+  content: "";
+  display: block;
+  background-color: #FFF;
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  transition: .2s;
+}
+.btn-animation-02::before {
+  left: 0;
+}
+.btn-animation-02::after {
+  right: 0;
+}
+
+.btn-animation-02:hover:before,
+.btn-animation-02:hover:after {
+  width: 0;
+  background-color: #FFF;
+}
+
+.btn-animation-02:hover {
+  color: #FFF;
+}
